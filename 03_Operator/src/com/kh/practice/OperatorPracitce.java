@@ -55,7 +55,7 @@ public class OperatorPracitce {
 		int num1 = 0;
 		int num2 = 0;
 		int num3 = 0; 
-//		String result = "";
+		boolean result = false;
 	
 		Scanner sc = new Scanner(System.in);
 		
@@ -68,7 +68,11 @@ public class OperatorPracitce {
 		System.out.print("입력3 : ");
 		num2 = sc.nextInt();
 		
-		String result = ((num1 == num2) && (num2 == num3)) ? "true" : "False";  // 등위 표시 : == 
+//		String result = ((num1 == num2) && (num2 == num3)) ? "true" : "False";  // 등위 표시 : == 	
+//		System.out.println(result);
+		
+		// 여기서 삼항 연산자 없이 가능해요! 삼항 연산자 없이 꼭 해보세요!
+		result = (num1 == num2) && (num2 == num3);
 		System.out.println(result);
 		
 	}
@@ -84,7 +88,7 @@ public class OperatorPracitce {
 		System.out.print("정수 : ");
 		num = sc.nextInt();
 		
-		String result = (num / 2 == 0) ? "짝수다" : "홀수다";  
+		String result = (num % 2 == 0) ? "짝수다" : "홀수다";   // 나누기 연산을 사용하면 안 되는 숫자가 있어요! 나머지 (%) 연산자 추천!
 		System.out.println(result);
 		
 	} 
@@ -109,7 +113,7 @@ public class OperatorPracitce {
 		
 		int num1 = 0;
 		int num2 = 0;
-		boolean result = false;
+		int i = 0;
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -118,8 +122,13 @@ public class OperatorPracitce {
 		
 		System.out.print("바구니의 크기 : ");
 		num2 = sc.nextInt();
+		
+		i = num1 / num2;
 	
-		System.out.println("필요한 바구니의 수 : " + (((num1 % num2) == 0) ? (num1 / num2) : (num1 / num2) + 1));
+//		System.out.println("필요한 바구니의 수 : " + (((num1 % num2) == 0) ? (num1 / num2) : (num1 / num2) + 1));
+		// 접근 한 방식 좋아요! 그래서 하나 더 요구해볼게요~~ 지금 코드에서 num1 / num2 부분이 중복되고 있는데요
+				// 이 부분 좀 더 줄여볼 수 있어서 시간 되신다면 꼭 생각해보세요!
+		System.out.println("필요한 바구니의 수 : " + (((num1 % num2) == 0) ? (i) : (i) + 1));
 
 	}
 
