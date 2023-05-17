@@ -91,12 +91,7 @@ public class VariablePractice {
 			
 			System.out.println("첫번째 문자 : " + str.charAt(0) );
 			System.out.println("마지막 문자 : " + str.charAt(str.length()-1));
-			
 
-	
-			
-		
-		
 		}
 
 		}

@@ -5,21 +5,27 @@ public class CastingPractice {
 	public static void main(String[] args) {
 		
 		CastingPractice cp = new CastingPractice();
-	//	cp.method1();
-		cp.method2();
+		cp.method1();
+	//	cp.method2();
 		
 	}
 	
+	// 입력받은 값! str을 활용해보세요!
+	// char <-> int 형변환 활용
 	public void method1() {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("문자 : ");
 		String str = sc.next();
 		
-		int num = 'A'; 
-		int num2 = 'B';
-		System.out.println("A unicode : " + num);
-		System.out.println("B unicode : " + num2);
+		char ch = str.charAt(0);
+		int num = ch;
+		
+		char ch2 = (char) (num + 1);
+		int num2 = (int) ch2;
+		
+		System.out.println(ch + " unicode : " + num);
+		System.out.println(ch2 + " unicode : " + num2);
 
 	}
 	
