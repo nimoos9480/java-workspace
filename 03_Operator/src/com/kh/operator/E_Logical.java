@@ -12,13 +12,13 @@ public class E_Logical {
 	 * 논리값 && 논리값 : (and, 그리고) 
 	 *                 왼쪽, 오른쪽 둘 다 true일 경우 결과값은 true
 	 * 논리값 || 논리값 : (or, 또는) 
-	 *                 왼쪽, 오른쪽 둘 중 하나라고 true일 경우 결과값은 true
+	 *                 왼쪽, 오른쪽 둘 중 하나라도 true일 경우 결과값은 true
 	 * */
 	
 	public static void main(String[] args) {
 		
 		E_Logical e = new E_Logical();
-//		e.method1();  // 주석처리 : ctrl+/ : 
+//		e.method1();  // 주석처리 : ctrl + '/'
 //		e.method2();
 		e.method3();
 	}
