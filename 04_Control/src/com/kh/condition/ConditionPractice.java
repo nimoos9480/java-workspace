@@ -78,8 +78,11 @@ public class ConditionPractice {
 		
 		num3 = num2 / num1;
     	
-		System.out.println((((num2 % num1) == 0) ? (num3) : (num3) + 1));
+//		System.out.println((((num2 % num1) == 0) ? (num3) : (num3) + 1));
 		
+		if((num2 % num1) == 0) {
+			System.out.println(num3);
+		} else System.out.println(num3 + 1);
 		
         
     }
@@ -151,10 +154,10 @@ public class ConditionPractice {
     	if(num < 100000) {
     		System.out.println(num);
     	} else if(num < 300000) {
-    		System.out.println(num * 0.95);
+    		System.out.println(num * 95/100);
     	} else if(num<500000) {
-    		System.out.println(num * 0.90);
-    	} else System.out.println(num * 0.80);
+    		System.out.println(num * 90/100);
+    	} else System.out.println(num * 80/100);
     			
     }
 
@@ -452,20 +455,16 @@ public class ConditionPractice {
 
 	}
 		
-		
 
-	
-	
-	
     
     
     public static void main(String[] args) {
     	ConditionPractice cp = new ConditionPractice();
 //    	cp.practice1();
 //    	cp.practice2(); 
-//    	cp.practice3();
+    	cp.practice3();
 //    	cp.practice4();
-    	cp.practice5(); // 다시
+//    	cp.practice5(); // 다시
 //    	cp.practice6();
 //    	cp.practice7();
 //    	cp.practice8();
