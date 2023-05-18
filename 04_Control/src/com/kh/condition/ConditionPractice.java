@@ -67,12 +67,18 @@ public class ConditionPractice {
 
      */
     public void practice3() {
+    	
+    	int num1, num2, num3 = 0;
 
-//		System.out.print("피자 조각 수 : ");
-//		int num1 = sc.nextInt();
-//		
-//		System.out.print("피자 먹는 사람 수 : ");
-//		int num2 = sc.nextInt();
+		System.out.print("피자 조각 수 : ");
+		num1 = sc.nextInt();
+		
+		System.out.print("피자 먹는 사람 수 : ");
+		num2 = sc.nextInt();
+		
+		num3 = num2 / num1;
+    	
+		System.out.println((((num2 % num1) == 0) ? (num3) : (num3) + 1));
 		
 		
         
@@ -141,7 +147,7 @@ public class ConditionPractice {
     	
     	System.out.print("구매한 옷 가격 : ");
 		int num = sc.nextInt();
-		
+	
     	if(num < 100000) {
     		System.out.println(num);
     	} else if(num < 300000) {
@@ -189,20 +195,24 @@ public class ConditionPractice {
       비밀번호 : 1234
       아이디가 틀렸습니다.
     */
-    public void practice7() {
-    	
-    	System.out.print("아이디 : ");
+	public void practice7() {
+
+		System.out.print("아이디 : ");
 		String id = sc.nextLine();
-		
+
 		System.out.print("비밀번호 : ");
 		int pw = sc.nextInt();
-		
-		
-		if("id".equals(id) && "pw".equals(pw)) { 
+
+		if ("happy".equals(id) && (pw == 1234)) {
 			System.out.println("로그인 성공!");
-    }
+		} else if ("happy".equals(id) && !(pw == 1234)) {
+			System.out.println("비밀번호가 틀렸습니다");
+		} else if (!("happy".equals(id)) && pw == 1234) {
+			System.out.println("아이디가 틀렸습니다");
+		}
+	}
     	
-    }
+    
 
     /*
         키, 몸무게를 double로 입력 받고 BMI지수를 계산하여 계산 결과에 따라
@@ -219,6 +229,23 @@ public class ConditionPractice {
 
      */
     public void practice8() {
+    	
+    	double BMI = 0;
+    	
+    	System.out.print("키(m)를 입력해 주세요 : ");
+    	double h = sc.nextDouble();
+    	
+    	System.out.print("몸무게(kg)를 입력해 주세요 : ");
+    	double w = sc.nextDouble();
+    	
+    	BMI = w / (h * h);
+    	System.out.println("BMI 지수 : " + BMI);
+    			
+    	if(BMI < 18.5) {System.out.println("저체중");}
+    	else if(BMI < 23) {System.out.println("정상체중");}
+    	else if(BMI < 25) {System.out.println("과체중");}
+    	else if(BMI < 30) {System.out.println("비만");}
+    	else {System.out.println("고도비만");}
        
     }
 
@@ -234,9 +261,44 @@ public class ConditionPractice {
 
      */
     public void practice9() {
+    	
+		int r = 0;
 
-    }
+		System.out.print("피연산자1 입력: ");
+		int n1 = sc.nextInt();
 
+		System.out.print("피연산자2 입력: ");
+		int n2 = sc.nextInt();
+
+		System.out.print("연산자를 입력(+,-,*,/,%) : ");
+		String op = sc.next();
+
+		if (op.equals("+")) {
+			r = n1 + n2;
+			System.out.println(n1 + " + " + n2 + " = " + r);
+		} else if (op.equals("-")) {
+			r = n1 - n2;
+			System.out.println(n1 + " - " + n2 + " = " + r);
+		} else if (op.equals("*")) {
+			r = n1 * n2;
+			System.out.println(n1 + " * " + n2 + " = " + r);
+
+		} else if (op.equals("/")) {
+			r = n1 / n2;
+			System.out.println(n1 + " / " + n2 + " = " + r);
+
+		} else if (op.equals("%")) {
+			r = n1 % n2;
+			System.out.println(n1 + " % " + n2 + " = " + r);
+
+		} else {
+			System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
+		}
+
+	}
+
+    
+    
     /*
       아래 예시와 같이 메뉴를 출력하고 메뉴 번호를 누르면 “OO메뉴입니다“를,
       종료 번호를 누르면 “프로그램이 종료됩니다.”를 출력하세요
@@ -250,7 +312,34 @@ public class ConditionPractice {
         조회 메뉴입니다.
      */
     public void practice10() {
+    	
+    	System.out.println("1. 입력");
+    	System.out.println("2. 수정");
+    	System.out.println("3. 조회");
+    	System.out.println("4. 삭제");
+    	System.out.println("9. 종료");
+    	
+    	System.out.print("메뉴 번호를 입력하세요 : ");
+		int num1 = sc.nextInt();
 
+		switch (num1) {
+		case 1:
+			System.out.println("입력메뉴입니다");
+			break;
+		case 2:
+			System.out.println("수정메뉴입니다");
+			break;
+		case 3:
+			System.out.println("조회메뉴입니다");
+			break;
+		case 4:
+			System.out.println("삭제메뉴입니다");
+			break;
+		case 9:
+			System.out.println("프로그램이 종료됩니다.");
+			break;
+		}
+    	
     }
 
     /*
@@ -300,18 +389,89 @@ public class ConditionPractice {
 
      */
     public void practice11() {
-        
-    }
+    	
+		double r1, r2, r3, r4, sum = 0;
+
+		System.out.print("중간 고사 점수 : ");
+		int mid = sc.nextInt();
+
+		System.out.print("기말 고사 점수 : ");
+		int fin = sc.nextInt();
+
+		System.out.print("과제 점수 : ");
+		int t = sc.nextInt();
+
+		System.out.print("출석 회수 : ");
+		int a = sc.nextInt();
+
+		System.out.println(" ===========결과==========");
+
+//		중간고사, 기말고사, 과제점수, 출석회수를 입력하고 Pass 또는 Fail을 출력하세요.
+//        총 점 100점 중 배점으로는 다음과 같다.
+//        중간고사 (20%), 기말고사 (30%), 과제 (30%), 출석 (20%)
+//
+//        이 때, 출석 회수는 총 강의 회수 20회 중에서 출석한 날만 입력
+//
+//        총 점이 70점 이상이면서 전체 강의의 70%이상 출석을 했을 경우 Pass,
+//        아니면 Fail을 출력하세요.
+		
+		r1 = mid * 0.2;
+		r2 = fin * 0.3;
+		r3 = t * 0.3;
+		r4 = a * 5 * 0.2;
+		sum = r1 + r2 + r3 + r4;
+		
+//		if (a >= 20 * 0.7) {
+//			if (sum >= 70) {
+//				System.out.println("중간 고사 점수(20) : " + r1);
+//				System.out.println("기말 고사 점수(30) : " + r2);
+//				System.out.println("과제 점수 (30) : " + r3);
+//				System.out.println("출석 점수 (20) : " + r4);
+//				System.out.println("총점 :  : " + sum);
+//				System.out.println("Pass"); // 1)
+//			} else if (sum < 70){
+//				System.out.println("FAIL [점수 미달] (총점 " + sum + ")");  //2
+//			}	
+		
+		if ((a >= 20 * 0.7) && (sum >= 70)) {
+			System.out.println("중간 고사 점수(20) : " + r1);
+			System.out.println("기말 고사 점수(30) : " + r2);
+			System.out.println("과제 점수 (30) : " + r3);
+			System.out.println("출석 점수 (20) : " + r4);
+			System.out.println("총점 :  : " + sum);
+			System.out.println("Pass"); // 1)
+		} else if ((a >= 20 * 0.7) && (sum < 70)) {
+			System.out.println("FAIL [점수 미달] (총점 " + sum + ")"); // 2
+		} else if ((a < 20 * 0.7) && (sum >= 70)) {
+			System.out.println("FAIL [출석 횟수 부족] (" + a + "/20)");
+		} else if ((a < 20 * 0.7) && (sum < 70)) {
+			System.out.println("FAIL [출석 횟수 부족] (" + a + "/20)");
+			System.out.println("FAIL [점수 미달] (총점 " + sum + ")");
+			
+		}
+
+	}
+		
+		
+
+	
+	
+	
+    
     
     public static void main(String[] args) {
     	ConditionPractice cp = new ConditionPractice();
 //    	cp.practice1();
-//    	cp.practice2(); 다시
+//    	cp.practice2(); 
 //    	cp.practice3();
 //    	cp.practice4();
-//    	cp.practice5(); 다시
+    	cp.practice5(); // 다시
 //    	cp.practice6();
-    	cp.practice7();
+//    	cp.practice7();
+//    	cp.practice8();
+//    	cp.practice9();
+//    	cp.practice10();
+//    	cp.practice11();
     }
 
     
