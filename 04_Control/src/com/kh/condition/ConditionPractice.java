@@ -2,7 +2,7 @@ package com.kh.condition;
 
 import java.util.Scanner;
 
-import com.kf.loop.C_For;
+import com.kh.loop.C_For;
 
 public class ConditionPractice {
 	
@@ -409,32 +409,12 @@ public class ConditionPractice {
 
 		System.out.println(" ===========결과==========");
 
-//		중간고사, 기말고사, 과제점수, 출석회수를 입력하고 Pass 또는 Fail을 출력하세요.
-//        총 점 100점 중 배점으로는 다음과 같다.
-//        중간고사 (20%), 기말고사 (30%), 과제 (30%), 출석 (20%)
-//
-//        이 때, 출석 회수는 총 강의 회수 20회 중에서 출석한 날만 입력
-//
-//        총 점이 70점 이상이면서 전체 강의의 70%이상 출석을 했을 경우 Pass,
-//        아니면 Fail을 출력하세요.
 		
 		r1 = mid * 0.2;
 		r2 = fin * 0.3;
 		r3 = t * 0.3;
 		r4 = a * 5 * 0.2;
 		sum = r1 + r2 + r3 + r4;
-		
-//		if (a >= 20 * 0.7) {
-//			if (sum >= 70) {
-//				System.out.println("중간 고사 점수(20) : " + r1);
-//				System.out.println("기말 고사 점수(30) : " + r2);
-//				System.out.println("과제 점수 (30) : " + r3);
-//				System.out.println("출석 점수 (20) : " + r4);
-//				System.out.println("총점 :  : " + sum);
-//				System.out.println("Pass"); // 1)
-//			} else if (sum < 70){
-//				System.out.println("FAIL [점수 미달] (총점 " + sum + ")");  //2
-//			}	
 		
 		if ((a >= 20 * 0.7) && (sum >= 70)) {
 			System.out.println("중간 고사 점수(20) : " + r1);
