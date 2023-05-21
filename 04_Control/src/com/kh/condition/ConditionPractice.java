@@ -16,6 +16,8 @@ public class ConditionPractice {
        숫자를 한 개 입력하세요 : -8
        양수만 입력해주세요.
      */
+	
+	
     public void practice1() {
     	System.out.print("숫자 입력 : ");
     	int num = sc.nextInt();
@@ -26,7 +28,7 @@ public class ConditionPractice {
     		System.out.println("홀수다");
     	} else {System.out.println("양수만 입력해주세요.");
     	}
-    	
+    	// if ~ else if ~ else 잘하셨습니다! 혹시 조건식에서 num > 0을 한 번만 쓰고 싶다! 그러면 중첩 if문으로 바꿔보는 것도 좋아요!
     }
 
     /*
@@ -79,6 +81,7 @@ public class ConditionPractice {
 		num3 = num2 / num1;
     	
 //		System.out.println((((num2 % num1) == 0) ? (num3) : (num3) + 1));
+//		혹시나 여기 부분! 좀더 바꿔 보자 싶으시다면 연산자 코멘트 달았던 거 복습해보는 것도 좋아요! num3를 어떻게 하면 좋을지 :)
 		
 		if((num2 % num1) == 0) {
 			System.out.println(num3);
@@ -158,7 +161,7 @@ public class ConditionPractice {
     	} else if(num<500000) {
     		System.out.println(num * 90/100);
     	} else System.out.println(num * 80/100);
-    			
+// 아마 뒤에 .0이 붙어서 신경이 쓰일텐데요! 이거 해결 방법은 여러 가지가 있어요~~ printf를 사용해도 되고~ 아님 형변환을 해도 되고~~ 다양합니다 :)
     }
 
 
@@ -212,6 +215,7 @@ public class ConditionPractice {
 			System.out.println("비밀번호가 틀렸습니다");
 		} else if (!("happy".equals(id)) && pw == 1234) {
 			System.out.println("아이디가 틀렸습니다");
+			// 여기도 혹시 "happy".equals(id) 부분 한번만 하고 싶다면 중첩 if문!
 		}
 	}
     	
@@ -415,6 +419,7 @@ public class ConditionPractice {
 		r3 = t * 0.3;
 		r4 = a * 5 * 0.2;
 		sum = r1 + r2 + r3 + r4;
+		// if ~ else if! 잘하셨어요 :) 만약 조건식에서 여러군데에서 사용한 조건을 하나만 쓰고 싶다! 그럼 중첩 if문 사용해보시는 것도 좋아요!
 		
 		if ((a >= 20 * 0.7) && (sum >= 70)) {
 			System.out.println("중간 고사 점수(20) : " + r1);
