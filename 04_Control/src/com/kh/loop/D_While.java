@@ -141,16 +141,7 @@ public class D_While {
 		}
 			 
 			
-		
-		
-		
-		
-//while(true) {
-//	System.out.println("숫자 입력 > ");
-//	input = sc.nextInt();
-//	System.out.println(input);
-//	
-
+	
 	public static void main(String[] args) {
 		D_While d = new D_While();
 //		d.method1();
