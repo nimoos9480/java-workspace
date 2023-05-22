@@ -64,54 +64,26 @@ public class ArrayPractice {
 	 * 
 	 * */
 	public void method3() {
-		
-		String[] food = {"피자", "치킨", "짜장면", "떡볶이", "볶음밥"};
+
+		String[] food = { "피자", "치킨", "짜장면", "떡볶이", "볶음밥" };
 		boolean a = false;
-		
+
 		System.out.print("메뉴 입력 : ");
 		String menu = sc.nextLine();
-		
-		for (int i = 0; i<food.length; i++) {
-			if (food[i].equals(menu)) {
+
+		for (String s : food) {
+			if (s.equals(menu)) {
 				a = true;
-			
-				}
-				
-			if(a==true) {
-				System.out.println("배달 가능");
-				
-			} else {if(a==false)
-				System.out.println("배달 불가능"); 
-				}
-			
+				break;
+			}
 		}
+
+		if (a == true) {
+			System.out.println("배달 가능");
+		} else {
+			System.out.println("배달 불가능");
 		}
-		
-		
-//		String userfood = "";
-//		String[] food = { "밥", "햄버거", "피자" };
-//		boolean a = false;
-//		System.out.println("메뉴를 입력해주세요");
-//		userfood = sc.nextLine();
-//​
-//		for (int i = 0; i < food.length; i++) {
-//​
-//			if (food[i].equals(userfood)) {
-//				a = true;
-//				break;
-//			}
-//​
-//		}
-//		if (a == true) {
-//​
-//			System.out.println("배달 가능");
-//​
-//		} else {
-//​
-//			System.out.println("배달 불가능");
-//		}
-//​
-//	}
+	}
 
 	
 	
@@ -125,7 +97,22 @@ public class ArrayPractice {
 	 * 
 	 * */
 	public void method4() {
-		
+
+//		123456-1234567
+//		012345678
+		System.out.print("주민등록번호 : ");
+		String id = sc.nextLine();
+
+		char[] idArr = id.toCharArray();
+
+		for (int i = 0; i < idArr.length; i++) {
+			if (i >= 8) {
+				System.out.print("*");
+			} else {
+				System.out.print(idArr[i]);
+			}
+		}
+
 	}
 	
 	/*
@@ -135,10 +122,16 @@ public class ArrayPractice {
 	 * gnimmargorp
 	 * 
 	 * */
+	
 	public void method5() {
-		
-		
-		
+
+		System.out.print("단어 입력 : ");
+		String word = sc.nextLine();
+
+		for (int i = word.length() - 1; i >= 0; i--) {
+			System.out.print(word.charAt(i));
+		}
+
 	}
 		
 		public static void main(String[] args) { // String[] : 배열~~~
@@ -146,7 +139,7 @@ public class ArrayPractice {
 			ArrayPractice ap = new ArrayPractice();
 //			ap.method1();
 //			ap.method2();
-			ap.method3();
+//			ap.method3();
 //			ap.method4();
 //			ap.method5();
 		
