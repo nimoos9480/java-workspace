@@ -117,38 +117,102 @@ public class D_While {
 	 * */
 	public void method5() {
 		
-		double random = Math.random();
-		random = Math.random() * 100 + 1;
-		int num = (int) random;
+//		double random = Math.random();
+//		random = Math.random() * 100 + 1;
+//		int num = (int) random;
+		
+		double answer = (int) Math.random() * 100 + 1;
+		int input = 0;
+		int count = 0;
 	
-		int k = 0;
+//		int k = 0;
 		
 		while(true) {
+			count++;
+			
 			System.out.print("1과 100 사이의 값 입력 > ");
-			int i = sc.nextInt();
-			
-			k+=1;
-			
-			if(i > num) {
+			input = sc.nextInt();
+
+			if(answer > input) {
 				System.out.println("더 작은 수를 입력하세요.");	
-			} if(i < num) {
+			} else if(answer < input) {
 				System.out.println("더 큰 수를 입력하세요.");
-			} else if(i==num) {
-				System.out.println(k + "번 만에 맞췄습니다.");
+			} else {
+				System.out.println(count + "번 만에 맞췄습니다.");
 				break;
 					}
 			}
 		}
-			 
+	/*
+	 * ------------------------------------
+	 * 1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * ------------------------------------
+	 * 선택 > 1
+	 * 예금액 > 5000
+	 * 
+	 * ------------------------------------
+	 * 1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * ------------------------------------
+	 * 선택 > 2
+	 * 출금액 > 2000
+	 * 
+	 * ------------------------------------
+	 * 1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * ------------------------------------
+	 * 선택 > 3
+	 * 잔고 > 3000
+	 * 
+	 * ------------------------------------
+	 * 1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * ------------------------------------
+	 * 선택 > 4
+	 * 프로그램 종료
+	 * */
+	public void method6() {
+		
+		int balance = 0;
+		boolean run = true; // 브레이크로 반복문 못 벗어날 때 사용
+		
+		while(run) {
+			System.out.println(" ------------------------------------");
+			System.out.println("1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료");
+			System.out.println(" ------------------------------------");
 			
+			System.out.print("선택 > ");
+			int menu = Integer.parseInt(sc.nextLine()); 
+			// Integer.parseInt " Integer클래스의 parseInt 메소드 값이 String -> int값으로 변경해주는 메소드
+			// 문자열을 숫자로 변경해주는 메소드 = 문자도 그대로 숫자로 인식함
 	
+			switch (menu){
+			
+			case 1: 
+				System.out.print("예금액 > " );
+				balance += Integer.parseInt(sc.nextLine());
+				break; // 스위치 안에 있는 브레이크 = > 반복문에서 벗어날 수 없음
+			case 2: 
+				System.out.print("출금액 > " ); 
+				balance -= Integer.parseInt(sc.nextLine());
+				break;
+			case 3: 
+				System.out.print("잔고 > " ); 
+				System.out.println(balance); 	
+				break;
+			case 4: 
+				run = false; // 반복문에서 벗어나기 위함
+				break;
+			} 
+		} System.out.println("프로그램 종료");
+	}
+	
+
 	public static void main(String[] args) {
 		D_While d = new D_While();
 //		d.method1();
 //		d.method2();
 //		d.method3();
 //		d.method4();
-		d.method5();
+//		d.method5();
+		d.method6();
 		
 
 	}

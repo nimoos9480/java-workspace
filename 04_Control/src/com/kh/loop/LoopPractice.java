@@ -168,11 +168,12 @@ class LoopPractice {
 	public void method6() {
 
 		int com = (int) ((Math.random() * 3) + 1);
+		boolean run = true;
 
 		System.out.print("당신의 이름을 입력해주세요 : ");
 		String name = sc.nextLine();
 
-		while (true) {
+		while (run) {
 
 			System.out.print("가위바위보 : ");
 			String user = sc.nextLine();
@@ -194,6 +195,7 @@ class LoopPractice {
 					System.out.println("졌습니다ㅠㅠ");
 				} else if ("바위".equals(user)) {
 					System.out.println("이겼습니다!");
+					run = false;
 					
 				} break;
 				
@@ -204,6 +206,7 @@ class LoopPractice {
 					System.out.println("비겼습니다.");
 				} else if ("보".equals(user)) {
 					System.out.println("이겼습니다!");
+					run = false;
 					
 				} break;
 			case 3: // 컴퓨터 보
@@ -212,8 +215,9 @@ class LoopPractice {
 				} else if ("보".equals(user)) {
 					System.out.println("비겼습니다.");
 				} else if ("가위".equals(user)) {
-					System.out.println("이겼습니다!");		
-			} break;
+					System.out.println("이겼습니다!");	
+					run = false;
+			} 
 		} 
 	}
 			
