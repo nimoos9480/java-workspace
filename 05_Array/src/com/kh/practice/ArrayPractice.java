@@ -80,7 +80,7 @@ public class ArrayPractice {
 			if(a==true) {
 				System.out.println("배달 가능");
 				
-			} else {
+			} else {if(a==fals)
 				System.out.println("배달 불가능"); 
 				}
 			
