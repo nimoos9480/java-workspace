@@ -106,7 +106,7 @@ class LoopPractice {
      */
     public void method5() {
 
-    		int count1 = 0;
+    		int count1 = 0; // 1 눈의 수 카운트 변수
     		int count2  = 0;
     		int count3 = 0;
     		int count4 = 0;
