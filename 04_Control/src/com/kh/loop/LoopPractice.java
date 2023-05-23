@@ -113,7 +113,7 @@ class LoopPractice {
     		int count5 = 0;
     		int count6 = 0;
     		
-    		for(int i=0; i<10; i++) {
+    		for(int i=0; i<10; i++) { 
     			int num = (int)((Math.random()*6) + 1);
 //        		System.out.print(num + " ");
     			
