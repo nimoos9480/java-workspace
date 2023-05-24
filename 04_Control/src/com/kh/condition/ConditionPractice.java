@@ -209,15 +209,23 @@ public class ConditionPractice {
 		System.out.print("비밀번호 : ");
 		int pw = sc.nextInt();
 
-		if ("happy".equals(id) && (pw == 1234)) {
-			System.out.println("로그인 성공!");
-		} else if ("happy".equals(id) && !(pw == 1234)) {
-			System.out.println("비밀번호가 틀렸습니다");
-		} else if (!("happy".equals(id)) && pw == 1234) {
-			System.out.println("아이디가 틀렸습니다");
+//		if ("happy".equals(id) && (pw == 1234)) {
+//			System.out.println("로그인 성공!");
+//		} else if ("happy".equals(id) && !(pw == 1234)) {
+//			System.out.println("비밀번호가 틀렸습니다");
+//		} else if (!("happy".equals(id)) && pw == 1234) {
+//			System.out.println("아이디가 틀렸습니다");
 			// 여기도 혹시 "happy".equals(id) 부분 한번만 하고 싶다면 중첩 if문!
+
+			if ("happy".equals(id) && (pw == 1234)) {
+				System.out.println("로그인 성공!");
+			} else if (!(pw == 1234)) {
+				System.out.println("비밀번호가 틀렸습니다");
+			} else {
+				System.out.println("아이디가 틀렸습니다");
+			}
 		}
-	}
+	
     	
     
 
@@ -447,11 +455,11 @@ public class ConditionPractice {
     	ConditionPractice cp = new ConditionPractice();
 //    	cp.practice1();
 //    	cp.practice2(); 
-    	cp.practice3();
+//    	cp.practice3();
 //    	cp.practice4();
 //    	cp.practice5(); // 다시
 //    	cp.practice6();
-//    	cp.practice7();
+    	cp.practice7();
 //    	cp.practice8();
 //    	cp.practice9();
 //    	cp.practice10();
