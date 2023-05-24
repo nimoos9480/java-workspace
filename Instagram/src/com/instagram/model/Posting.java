@@ -1,8 +1,8 @@
-package com.youtube.model;
+package com.instagram.model;
 
 import java.util.Date;
 
-public class Video {
+public class Posting {
 	
 	public String title;
 	public String comment;
@@ -19,25 +19,24 @@ public class Video {
 	Delete : 삭제
  * */	
 	
-	public Video upload() { // 영상 업로드	
+	public Posting upload() { // 게시물 업로드	
 		return null;
 	}
 	
-	public Video[] videoList() {// 영상 목록	
+	public Posting[] postingList() {// 게시물 목록	
 		return null;
 	}
 	
-	public Video viewVideo(){// 영상 1개 보기	
+	public Posting viewPosting(){// 게시물 1개 보기	
 		return null;
 	}
 	
-	public Video updateVideo() {// 동영상 수정	
+	public Posting updatePosting() {// 포스팅 수정	
 		return null;
 	}
 	
-	public boolean deleteVideo() {// 동영상 삭제
+	public boolean deletePosting() {// 포스팅 삭제
 		return false;
 	}
-	
 
 }
