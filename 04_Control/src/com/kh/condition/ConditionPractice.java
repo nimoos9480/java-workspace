@@ -216,6 +216,7 @@ public class ConditionPractice {
 //		} else if (!("happy".equals(id)) && pw == 1234) {
 //			System.out.println("아이디가 틀렸습니다");
 			// 여기도 혹시 "happy".equals(id) 부분 한번만 하고 싶다면 중첩 if문!
+		
 
 			if ("happy".equals(id) && (pw == 1234)) {
 				System.out.println("로그인 성공!");

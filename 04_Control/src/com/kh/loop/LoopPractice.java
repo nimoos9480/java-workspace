@@ -190,42 +190,80 @@ class LoopPractice {
 
 			System.out.println(name + " : " + user);
 
-			switch (com) {
-			case 1: // 컴퓨터 가위
+			if (com == 1) {
 				if ("가위".equals(user)) {
 					System.out.println("비겼습니다.");
 				} else if ("보".equals(user)) {
 					System.out.println("졌습니다ㅠㅠ");
 				} else if ("바위".equals(user)) {
 					System.out.println("이겼습니다!");
-					run = false;
+					break;
 
 				}
-				
-			case 2: // 컴퓨터 바위
+			}
+
+			if (com == 2) { // 컴퓨터 바위
 				if ("가위".equals(user)) {
 					System.out.println("졌습니다ㅠ");
 				} else if ("바위".equals(user)) {
 					System.out.println("비겼습니다.");
 				} else if ("보".equals(user)) {
 					System.out.println("이겼습니다!");
-					run = false;
+					break;
 
 				}
-				
-			case 3: // 컴퓨터 보
+			}
+
+			if (com == 3) { // 컴퓨터 보
 				if ("바위".equals(user)) {
 					System.out.println("졌습니다ㅠ");
 				} else if ("보".equals(user)) {
 					System.out.println("비겼습니다.");
 				} else if ("가위".equals(user)) {
 					System.out.println("이겼습니다!");
-					run = false;
+					break;
 				}
 			}
 		}
-
 	}
+
+
+//			switch (com) {
+//			case 1: // 컴퓨터 가위
+//				if ("가위".equals(user)) {
+//					System.out.println("비겼습니다.");
+//				} else if ("보".equals(user)) {
+//					System.out.println("졌습니다ㅠㅠ");
+//				} else if ("바위".equals(user)) {
+//					System.out.println("이겼습니다!");
+//					run = false;
+//
+//				}
+//				
+//			case 2: // 컴퓨터 바위
+//				if ("가위".equals(user)) {
+//					System.out.println("졌습니다ㅠ");
+//				} else if ("바위".equals(user)) {
+//					System.out.println("비겼습니다.");
+//				} else if ("보".equals(user)) {
+//					System.out.println("이겼습니다!");
+//					run = false;
+//
+//				}
+//				
+//			case 3: // 컴퓨터 보
+//				if ("바위".equals(user)) {
+//					System.out.println("졌습니다ㅠ");
+//				} else if ("보".equals(user)) {
+//					System.out.println("비겼습니다.");
+//				} else if ("가위".equals(user)) {
+//					System.out.println("이겼습니다!");
+//					run = false;
+//				}
+//			}
+//		}
+
+//	}
     		
 
 
@@ -234,11 +272,11 @@ class LoopPractice {
     public static void main(String[] args) {
 		LoopPractice lp = new LoopPractice();
 //		lp.method1();
-		lp.method2();
+//		lp.method2();
 //		lp.method3();
 //		lp.method4();
 //		lp.method5();
-//		lp.method6();
+		lp.method6();
 
 }
 }
