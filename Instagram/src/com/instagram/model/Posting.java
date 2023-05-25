@@ -2,41 +2,88 @@ package com.instagram.model;
 
 import java.util.Date;
 
+
+
 public class Posting {
 	
-	public String title;
-	public String comment;
-	public Date uploadAt;
-	public int count; // views
-	public String imgUrl;
-	public String fileUrl;
-	
-/*
- * 기능뽑기 : CRUD
-	Create : 추가
-	Read : 읽기(1개, 목록) 
-	Update : 수정 
-	Delete : 삭제
- * */	
-	
-	public Posting upload() { // 게시물 업로드	
-		return null;
+	private String title;
+	private String comment;
+	private Date uploadAt;
+	private int count; // views
+	private String imgUrl;
+	private String fileUrl;
+
+	public Posting() {
+	}
+
+	public Posting(String title, String comment, Date uploadAt, int count, String imgUrl, String fileUrl) {
+		this.title = title;
+		this.comment = comment;
+		this.uploadAt = uploadAt;
+		this.count = count;
+		this.imgUrl = imgUrl;
+		this.fileUrl = fileUrl;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	public Date getUploadAt() {
+		return uploadAt;
+	}
+
+	public void setUploadAt(Date uploadAt) {
+		this.uploadAt = uploadAt;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+
+	public String getFileUrl() {
+		return fileUrl;
+	}
+
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
+	}
+
+	@Override
+	public String toString() {
+		return "Posting [title=" + title + ", comment=" + comment + ", uploadAt=" + uploadAt + ", count=" + count
+				+ ", imgUrl=" + imgUrl + ", fileUrl=" + fileUrl + "]";
 	}
 	
-	public Posting[] postingList() {// 게시물 목록	
-		return null;
-	}
 	
-	public Posting viewPosting(){// 게시물 1개 보기	
-		return null;
-	}
 	
-	public Posting updatePosting() {// 포스팅 수정	
-		return null;
-	}
 	
-	public boolean deletePosting() {// 포스팅 삭제
-		return false;
-	}
+	
+	
+	
 
 }
