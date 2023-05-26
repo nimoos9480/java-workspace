@@ -18,31 +18,31 @@ public class Application {
 		
 		boolean check = true;
 		while(check) {
-//			int option = app.employeeMenu();  // = employeeMenu의 return 값 불러오기
-//			switch(option) {
-//			case 1: app.insertEmp(); break;
-//			case 2: app.updateEmp(); break;
-//			case 3: app.printEmp(); break;
-//			case 9: System.out.println("프로그램을 종료합니다.");
-//				break;
-//			}
-//		}
-//	
-		
-		for (int i = 1;; i++) {
-			int option = app.employeeMenu(); // = employeeMenu의 return 값 불러오기
-			if (option == 1)
-				app.insertEmp();
-			else if (option == 2)
-				app.updateEmp();
-			else if (option == 3)
-				app.printEmp();
-			else if (option == 9) {
-				System.out.println("프로그램을 종료합니다.");
+			int option = app.employeeMenu();  // = employeeMenu의 return 값 불러오기
+			switch(option) {
+			case 1: app.insertEmp(); break;
+			case 2: app.updateEmp(); break;
+			case 3: app.printEmp(); break;
+			case 9: System.out.println("프로그램을 종료합니다.");
 				break;
 			}
-
-		}}
+		}
+	
+		
+//		for (int i = 1;; i++) {
+//			int option = app.employeeMenu(); // = employeeMenu의 return 값 불러오기
+//			if (option == 1)
+//				app.insertEmp();
+//			else if (option == 2)
+//				app.updateEmp();
+//			else if (option == 3)
+//				app.printEmp();
+//			else if (option == 9) {
+//				System.out.println("프로그램을 종료합니다.");
+//				break;
+//			}
+//
+//		}}
 
 	}
 		
@@ -69,23 +69,23 @@ public class Application {
 			String name = sc.nextLine();
 
 			System.out.print("사원성별 : ");
-			char gender = sc.next().charAt(0); // nextLine하면 값 입력하기 전에 엔터가 눌려버려서 안됨
+			char gender = sc.nextLine().charAt(0); 
 
 			System.out.print("전화번호 : ");
-			String phone = sc.next();
+			String phone = sc.nextLine();
 
 			System.out.print("추가 정보를 더 입력하시겠습니까(y/n) : ");
-			String add = sc.next();
-			{
+			String add = sc.nextLine();
+			
 				if (add.equals("y")) {
 					System.out.print("사원부서 : ");
-					String dept = sc.next();
+					String dept = sc.nextLine();
 
 					System.out.print("사원연봉 : ");
-					int salary = Integer.parseInt(sc.next());
+					int salary = Integer.parseInt(sc.nextLine());
 
 					System.out.print("보너스 율 : ");
-					double bonus = sc.nextDouble();
+					double bonus = Double.parseDouble(sc.nextLine());
 					
 
 					employeeController.add(empNo, name, gender, phone, dept, gender, bonus); // 입력받은 데이터를 컨트롤러 값에 넣어주는 것
@@ -95,7 +95,7 @@ public class Application {
 				}
 			}
 
-		}
+		
 
 		public void updateEmp() { // 수정할 데이터를 사용자에게 받는 메소드
 		
