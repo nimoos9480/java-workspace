@@ -9,6 +9,7 @@ public class User {
 	private String nickName;
 	private char gender;
 	
+	Posting posting;
 	
 	public User() {
 	}

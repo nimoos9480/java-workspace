@@ -63,7 +63,7 @@ public class Application {
 		public void insertEmp() { // 저장할 데이터를 사용자에게 받는 메소드
 
 			System.out.print("사원번호 : ");
-			int empNo = Integer.parseInt(sc.nextLine());
+			int empNo = Integer.parseInt(sc.nextLine());  // nextLine 통일~
 
 			System.out.print("사원이름 : ");
 			String name = sc.nextLine();
