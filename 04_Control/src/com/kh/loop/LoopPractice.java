@@ -169,6 +169,9 @@ class LoopPractice {
 
 		int com = (int) ((Math.random() * 3) + 1);
 		boolean run = true;
+		int count1 = 0;
+		int count2 = 0;
+		int count3 = 0;
 
 		System.out.print("당신의 이름을 입력해주세요 : ");
 		String name = sc.nextLine();
@@ -192,11 +195,11 @@ class LoopPractice {
 
 			if (com == 1) {
 				if ("가위".equals(user)) {
-					System.out.println("비겼습니다.");
+					System.out.println("비겼습니다."); count1++;
 				} else if ("보".equals(user)) {
-					System.out.println("졌습니다ㅠㅠ");
+					System.out.println("졌습니다ㅠㅠ"); count2++;
 				} else if ("바위".equals(user)) {
-					System.out.println("이겼습니다!");
+					System.out.println("이겼습니다!"); count3++;
 					break;
 
 				}
@@ -204,11 +207,11 @@ class LoopPractice {
 
 			if (com == 2) { // 컴퓨터 바위
 				if ("가위".equals(user)) {
-					System.out.println("졌습니다ㅠ");
+					System.out.println("졌습니다ㅠ"); count2++;
 				} else if ("바위".equals(user)) {
-					System.out.println("비겼습니다.");
+					System.out.println("비겼습니다."); count1++;
 				} else if ("보".equals(user)) {
-					System.out.println("이겼습니다!");
+					System.out.println("이겼습니다!"); count3++;
 					break;
 
 				}
@@ -216,15 +219,16 @@ class LoopPractice {
 
 			if (com == 3) { // 컴퓨터 보
 				if ("바위".equals(user)) {
-					System.out.println("졌습니다ㅠ");
+					System.out.println("졌습니다ㅠ"); count2++;
 				} else if ("보".equals(user)) {
-					System.out.println("비겼습니다.");
+					System.out.println("비겼습니다."); count1++;
 				} else if ("가위".equals(user)) {
-					System.out.println("이겼습니다!");
+					System.out.println("이겼습니다!"); count3++;
 					break;
-				}
-			}
-		}
+				} 
+				
+			} 
+		} System.out.println(count1 +"번 비기고 "+ count2 + "번 지고 " + count3 + "번 이겼다");  // 멈춘뒤 출력이니까 while문 바깥으로 빼기
 	}
 
 
