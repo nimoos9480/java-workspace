@@ -25,7 +25,7 @@ public class Secretary extends Employee {
 
 	@Override
 	public String toString() {
-		return super.toString() + " / "+  "Secretary [nameOfBoss=" + nameOfBoss + "]";
+		return super.toString() + " / Secretary [nameOfBoss=" + nameOfBoss + "]";
 	}
 	
 	
