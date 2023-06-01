@@ -2,27 +2,35 @@ package com.youtube.controller;
 
 import com.youtube.model.User;
 
-public class UserController {
-	
-//	기능뽑기 : CRUD(Create Read Update Delete)
-	
-	public boolean login() { // 로그인
+public class UserController implements UserControllerImpl{
+
+	@Override
+	public boolean login() {
 		return false;
 	}
-	public boolean signUp() { // 회원가입
+
+	@Override
+	public boolean signUp() {
 		return false;
 	}
-	public User viewProfile() { // 프로필 보기
-		return null; // 참조변수는 null이 초기화
-	}
-	public User updateProfile() { // 프로필 수정
+
+	@Override
+	public User viewProfile() {
 		return null;
 	}
-	public boolean deleteProfile(){ // 계정 삭제
-		return false;
+
+	@Override
+	public User updateProfile() {
+		return null;
 	}
 
+	@Override
+	public boolean deleteProfile() {
+		return false;
+	}
+	
 
+	
 	
 
 }
