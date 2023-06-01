@@ -2,7 +2,32 @@ package com.instagram.controller;
 
 import com.instagram.model.Posting;
 
-public class PostingController {
+public class PostingController implements PostingControllerImpl {
+
+	@Override
+	public Posting upload() {
+		return null;
+	}
+
+	@Override
+	public Posting[] postingList() {
+		return null;
+	}
+
+	@Override
+	public Posting viewPosting() {
+		return null;
+	}
+
+	@Override
+	public Posting updatePosting() {
+		return null;
+	}
+
+	@Override
+	public boolean deletePosting() {
+		return false;
+	}
 	
 	/*
 	 * 기능뽑기 : CRUD
@@ -12,25 +37,7 @@ public class PostingController {
 		Delete : 삭제
 	 * */	
 		
-		public Posting upload() { // 게시물 업로드	
-			return null;
-		}
-		
-		public Posting[] postingList() {// 게시물 목록	
-			return null;
-		}
-		
-		public Posting viewPosting(){ // 게시물 1개 보기	
-			return null;
-		}
-		
-		public Posting updatePosting() { // 포스팅 수정	
-			return null;
-		}
-		
-		public boolean deletePosting() { // 포스팅 삭제
-			return false;
-		}
+	
 
 
 }
