@@ -2,29 +2,32 @@ package com.instagram.controller;
 
 import com.instagram.model.Posting;
 
-public class PostingController implements PostingControllerImpl {
+public class PostingController  {
 
-	@Override
-	public Posting upload() {
-		return null;
+	Posting[] postingList = new Posting[5];
+	int index = 0;
+
+	
+	public void upload(Posting posting) {
+		postingList[index++] = posting;
 	}
 
-	@Override
+	
 	public Posting[] postingList() {
-		return null;
+		return postingList;
 	}
 
-	@Override
-	public Posting viewPosting() {
-		return null;
+	
+	public Posting viewPosting(int index) {
+		return postingList[index];
 	}
 
-	@Override
-	public Posting updatePosting() {
-		return null;
+	
+	public void updatePosting(int index, Posting posting) {
+		postingList[index] = posting;
 	}
 
-	@Override
+	
 	public boolean deletePosting() {
 		return false;
 	}
