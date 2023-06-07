@@ -122,18 +122,23 @@ public class Application {
 		 */
 
 		
+		boolean check = true;
 		while (true) {
 			System.out.println("1. 과일 / 2. 채소 / 3. 견과");
 
 			System.out.print("추가할 종류 번호 : ");
 			int select = Integer.parseInt(sc.nextLine());
+			if(select != 1 && select !=2 && select !=3) {
+				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+				continue;
+			}
+				
 			System.out.print("추가할 이름 : ");
 			String name = sc.nextLine();
 			System.out.print("추가할 수량 : ");
 			int amount = Integer.parseInt(sc.nextLine());
 			
-			boolean check = false;
-			
+	
 			switch (select) {
 			case 1:
 				Farm f = new Farm("과일", name);
@@ -147,10 +152,7 @@ public class Application {
 				Farm n = new Farm("견과", name);
 				check = fc.addNewKind(n, amount);
 				break;
-
-			default:
-				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
-				continue;
+				
 			}
 
 			if (check) {

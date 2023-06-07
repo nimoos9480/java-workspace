@@ -16,10 +16,10 @@ public class FarmController {
 		// containsKey() : map에 key가 존재하는가
 		// 전달 받은 f가 hMap 안에 key로 존재하지 않을 때
 		// f와 amount를 각각 키와 값으로 저장 후 true 반환
-		if(hMap.containsKey(f)) {
+		if(!hMap.containsKey(f)) {
 			hMap.put(f, amount);
 			return true;
-		}
+		} else
 		
 		// 존재할 경우 false 반환
 		
