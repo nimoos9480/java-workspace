@@ -121,8 +121,7 @@ public class Application {
 		 * 
 		 */
 
-		
-		boolean check = true;
+
 		while (true) {
 			System.out.println("1. 과일 / 2. 채소 / 3. 견과");
 
@@ -138,24 +137,25 @@ public class Application {
 			System.out.print("추가할 수량 : ");
 			int amount = Integer.parseInt(sc.nextLine());
 			
+			boolean result = false;
 	
 			switch (select) {
 			case 1:
 				Farm f = new Farm("과일", name);
-				check = fc.addNewKind(f, amount);
+				result = fc.addNewKind(f, amount);
 				break;
 			case 2:
 				Farm v = new Farm("야채", name);
-				check = fc.addNewKind(v, amount);
+				result = fc.addNewKind(v, amount);
 				break;
 			case 3:
 				Farm n = new Farm("견과", name);
-				check = fc.addNewKind(n, amount);
+				result = fc.addNewKind(n, amount);
 				break;
 				
 			}
 
-			if (check) {
+			if (result) {
 				System.out.println("새 농산물이 추가되었습니다.");
 			} else {
 				System.out.println("새 농산물 추가에 실패하였습니다. 다시 입력해주세요.");
@@ -177,84 +177,113 @@ public class Application {
 		 * */
 		
 		
-		while(true) {
-		System.out.println("1. 과일 / 2. 채소 / 3. 견과");
-		System.out.print("삭제할 종류 번호 : ");
-		int select = Integer.parseInt(sc.nextLine());
-		System.out.print("삭제할 이름 : ");
-		String name = sc.nextLine();
-		
-		boolean check = false;
-		
-		switch (select) {
-		case 1:
-			Farm f = new Farm("과일", name);
-			check = fc.removeKind(f);
-			break;
-		case 2:
-			Farm v = new Farm("야채", name);
-			check = fc.removeKind(v);
-			break;
-		case 3:
-			Farm n = new Farm("견과", name);
-			check = fc.removeKind(n);
-			break;
+		while (true) {
+			System.out.println("1. 과일 / 2. 채소 / 3. 견과");
 
-		default:
-			System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
-			continue;
-		}
+			System.out.print("삭제할 종류 번호 : ");
+			int select = Integer.parseInt(sc.nextLine());
 
-		if (check) {
-			System.out.println("농산물 삭제에 성공하였습니다");
-		} else {
-			System.out.println("새 농산물 삭제에 실패하였습니다. 다시 입력해주세요.");
+			if (select < 1 || select > 3) {
+				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+				continue;
+			}
+
+			System.out.print("삭제할 이름 : ");
+			String name = sc.nextLine();
+
+			boolean result = false;
+
+			switch (select) {
+			case 1:
+				Farm f = new Farm("과일", name);
+				result = fc.removeKind(f);
+				break;
+			case 2:
+				Farm v = new Farm("야채", name);
+				result = fc.removeKind(v);
+				break;
+			case 3:
+				Farm n = new Farm("견과", name);
+				result = fc.removeKind(n);
+				break;
+
+			}
+
+			if (result) {
+				System.out.println("농산물 삭제에 성공하였습니다");
+			} else {
+				System.out.println("새 농산물 삭제에 실패하였습니다. 다시 입력해주세요.");
+			}
 		}
-	}
 	}
 	
 	public void changeAmount() {
-				
+
 		/*
-		 * 1. 과일 / 2. 채소 / 3. 견과 를 통해 번호로 종류를 받고 수정할 농산물의 이름과 수량도 받음.
-		 * 없는 번호를 선택하면 "잘못 입력하셨습니다. 다시 입력해주세요."가 출력되며 다시 번호를 받고,
-		 * 선택한 종류에 따라 객체가 다름.
+		 * 1. 과일 / 2. 채소 / 3. 견과 를 통해 번호로 종류를 받고 수정할 농산물의 이름과 수량도 받음. 없는 번호를 선택하면
+		 * "잘못 입력하셨습니다. 다시 입력해주세요."가 출력되며 다시 번호를 받고, 선택한 종류에 따라 객체가 다름.
 		 * 
-		 * 데이터를 저장한 객체와 수량을 fc의 changeAmount()로 넘기고
-		 * 전달받은 반환 값이 true면 "농산물 수량이 수정되었습니다.",
+		 * 데이터를 저장한 객체와 수량을 fc의 changeAmount()로 넘기고 전달받은 반환 값이 true면 "농산물 수량이 수정되었습니다.",
 		 * false면 "농산물 수량 수정에 실패하였습니다. 다시 입력해주세요." 출력되며 다시 번호를 받음.
 		 * 
-		 * */
-		System.out.println("1. 과일 / 2. 채소 / 3. 견과");
-		System.out.print("수정할 종류 번호 : ");
-		int select = Integer.parseInt(sc.nextLine());
-		System.out.print("수정할 이름 : ");
-		String name = sc.nextLine();
-		System.out.print("수정할 수량 : ");
-		int amount = Integer.parseInt(sc.nextLine());
-		
-		switch(select) {
-		case 1: 
-			fc.changeAmount(null, amount);
-			break;
-		case 2: 
-			fc.changeAmount(null, amount);
-			break;
-		case 3 : 
-			fc.changeAmount(null, amount);
-			check = false;
-			break; 
+		 */
+
+		while (true) {
+			System.out.println("1. 과일 / 2. 채소 / 3. 견과");
+			System.out.print("수정할 종류 번호 : ");
+			int select = Integer.parseInt(sc.nextLine());
+
+			if (select < 1 || select > 3) {
+				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+				continue;
 			}
-		
-		
+
+			System.out.print("수정할 이름 : ");
+			String name = sc.nextLine();
+			System.out.print("수정할 수량 : ");
+			int amount = Integer.parseInt(sc.nextLine());
+
+			boolean result = false;
+
+			switch (select) {
+			case 1:
+				Farm f = new Farm("과일", name);
+				result = fc.removeKind(f);
+				break;
+			case 2:
+				Farm v = new Farm("야채", name);
+				result = fc.removeKind(v);
+				break;
+			case 3:
+				Farm n = new Farm("견과", name);
+				result = fc.removeKind(n);
+				break;
+
+			}
+
+			if (result) {
+				System.out.println("농산물 수량이 수정되었습니다.");
+			} else {
+				System.out.println("농산물 수량 수정에 실패하였습니다. 다시 입력해주세요.");
+			}
+		}
+
 	}
+	
 	
 	public void printFarm() {
 		
 		// fc의 printFarm()의 반환 값을 이용하여 keySet()을 통해 "종류 : 이름(n개)" 형식으로 출력
 		
+		HashMap<Farm, Integer> farmMap = fc.printFarm();
+	    
+	    for (Farm farm : farmMap.keySet()) {
+	        int amount = farmMap.get(farm);
+		
 		fc.printFarm().keySet();
-		System.out.println("종류 : 이름(n개)");
+		  System.out.println("종류 : " + farm.getName() + "(" + amount + "개)");
+    }
+}
 	}
 	
 	public void buyFarm() {
@@ -269,11 +298,38 @@ public class Application {
 		 * false면 "마트에 없는 물건이거나 수량이 없습니다. 다시 입력해주세요." 출력되며 다시 번호를 받음.
 		 * 
 		 * */
-		System.out.println("1. 과일 / 2. 채소 / 3. 견과");
-		System.out.print("구매 종류 번호 : ");
-		int select = Integer.parseInt(sc.nextLine());
-		System.out.print("구매할 것 : ");
-		String name = sc.nextLine();
+		  System.out.println("1. 과일 / 2. 채소 / 3. 견과");
+		    System.out.print("구매 종류 번호: ");
+		    int select = Integer.parseInt(sc.nextLine());
+		    System.out.print("구매할 농산물: ");
+		    String name = sc.nextLine();
+		    
+		    boolean result = false;
+		    
+		    switch (select) {
+		        case 1:
+		        	Farm f = new Farm("과일", name);
+					result = fc.removeKind(f);
+		            break;
+		        case 2:
+		        	Farm v = new Farm("야채", name);
+					result = fc.removeKind(v);
+		            break;
+		        case 3:
+		        	Farm n = new Farm("견과", name);
+					result = fc.removeKind(n);
+		            break;
+		        default:
+		            System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+		            break;
+		    }
+		    
+		    if (result) {
+		        System.out.println("구매에 성공하였습니다.");
+		    } else {
+		        System.out.println("마트에 없는 물건이거나 수량이 없습니다. 다시 입력해주세요.");
+		    }
+		}
 		
 	}
 	
@@ -300,6 +356,10 @@ public class Application {
 	public void printBuyFarm() {
 		
 		// fc의 printBuyFarm()의 반환 값을 이용하여 출력
+			Set<String> farm = 
+		  
+		    for (Farm farm : buyFarmList) {
+		        System.out.println(farm.getName());
 		System.out.println(fc.printBuyFarm());
 		
 	}
