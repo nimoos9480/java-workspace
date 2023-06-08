@@ -19,7 +19,7 @@ public class FarmController {
 		if(!hMap.containsKey(f)) {
 			hMap.put(f, amount);
 			return true;
-		} else
+		}
 		
 		// 존재할 경우 false 반환
 		
@@ -35,7 +35,7 @@ public class FarmController {
 		if(hMap.containsKey(f)) {
 			hMap.remove(f);
 			return true;
-		} else
+		} 
 		
 		// 존재하지 않을 경우 false 반환
 
@@ -50,7 +50,7 @@ public class FarmController {
 		if(hMap.containsKey(f)) {
 			hMap.put(f, amount);
 			return true;
-		} else
+		} 
 
 		// 존재하지 않을 경우 false 반환
 		
@@ -68,11 +68,11 @@ public class FarmController {
 		// 전달 받은 f가 hMap 안에 존재하면서 그 f의 수량이 1개 이상 일 때
 		// list에 f 추가, 그리고 hMap에 f 수량 1 감소, true 반환
 		
-		if(hMap.containsKey(f) && hMap.get(f)>=1) {
+		if(hMap.containsKey(f) && hMap.get(f)>=1) {  // 수량은 value => 키를 가지고 밸류를 가지고 오는 메서드.
 			list.add(f);
-			hMap.put(f, hMap.get(f) - 1);
+			hMap.put(f, hMap.get(f) - 1);  // 감소시키는것 = 수정  ==> put사용
 		return true;
-		} else
+		} 
 		// 존재하지 않으면 false 반환
 
 		return false;
@@ -85,9 +85,9 @@ public class FarmController {
 
 		if(list.contains(f)) {
 			list.remove(f);
-			hMap.put(f, hMap.getOrDefault(f, 0) + 1); 
+			hMap.put(f, hMap.get(f) + 1); 
 	        return true;
-		} else
+		}
 		// 아니면 false 반환
 		
 		return false;
@@ -96,4 +96,6 @@ public class FarmController {
 	public ArrayList<Farm> printBuyFarm() {
 		return list;
 	}
+	
+	
 }
