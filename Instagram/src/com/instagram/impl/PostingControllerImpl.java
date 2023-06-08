@@ -1,4 +1,4 @@
-package com.instagram.controller;
+package com.instagram.impl;
 
 import com.instagram.model.Posting;
 
