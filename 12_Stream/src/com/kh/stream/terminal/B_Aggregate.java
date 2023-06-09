@@ -51,12 +51,6 @@ public class B_Aggregate {
 		OptionalInt first = Arrays.stream(array).findFirst();
 		System.out.println("첫번째 값 : " + first.getAsInt());
 		
-		
-		
-		
-		
-		
-		
 
 	}
 
