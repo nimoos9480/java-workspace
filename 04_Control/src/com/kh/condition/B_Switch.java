@@ -101,7 +101,7 @@ public class B_Switch {
 		case 1: System.out.println("관리권한");
 		case 2: System.out.println("글쓰기권한");
 		case 3: System.out.println("읽기권한");
-		} // break 빼도 되는 케이스
+		} // break가 없기 때문에 가능
 		
 		
 	}
