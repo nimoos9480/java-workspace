@@ -3,6 +3,7 @@ package com.kh.stream.terminal;
 import java.util.Arrays;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
+import java.util.stream.IntStream;
 
 /*
  * 기본 집계
@@ -51,7 +52,31 @@ public class B_Aggregate {
 		OptionalInt first = Arrays.stream(array).findFirst();
 		System.out.println("첫번째 값 : " + first.getAsInt());
 		
+		
+		// 커스텀 집계
+		// array : 1, 2, 3, 4, 5, 6, -> 2 * 4* 6 = ? 
+		
+		/* 첫번째 방법
+		 Arrays.stream(array).filter(value ->value % 2 == 0)
+		.reduce((x,y) -> x*y)   	// reduce는 Optional class
+		.ifPresent(value -> System.out.println(value));    
+		*/
+		
+		
+		// 두번째 방법
+		IntStream stream = Arrays.stream(array);
+		IntStream filter = stream.filter(value -> value % 2 == 0);   // filter의 반환타입 =  IntStream이라 여기에 담는것
 
+		OptionalInt reduce = filter.reduce((x,y) -> x*y);
+		
+		System.out.println(reduce.getAsInt());   
+		
+		// reduce 메소드는 주어진 연산을 사용하여 요소를 반복적으로 조합하여 최종 결과를 생성함
+		// filter가 없다면 1*2*3*4*5*6 의 결과가 나올 것
+		
+		
+		
+		
 	}
 
 }
