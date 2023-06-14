@@ -1,5 +1,6 @@
 package com.kh.time;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -175,60 +176,72 @@ public class A_Date {
 	// 입력된 형식이 잘못된 경우 다시 입력받기
 	public void practice() {
 
-		try {
-			boolean check = true;
-			while (check) {
-				Scanner sc = new Scanner(System.in);
-				SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+		Scanner sc = new Scanner(System.in);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+		Date result = null;
+		while (true) {
+			System.out.print("날짜를 yyyy/MM/dd 형태로 작성 : ");
+			String data = sc.nextLine();
 
-				System.out.print("날짜를 yyyy/MM/dd 형태로 작성 : ");
-				String bd = sc.nextLine();
-
-				String[] arr = bd.split("/");
-//		System.out.println(Arrays.toString(arr));
-
-				int y = Integer.parseInt(arr[0]);
-				int m = Integer.parseInt(arr[1]);
-				int d = Integer.parseInt(arr[2]);
-
-				Calendar date = Calendar.getInstance();
-				date.set(y, m - 1, d);
-
-				switch (date.get(Calendar.DAY_OF_WEEK)) {
-				case 1:
-					System.out.println("태어난 날 : 일요일");
-					break;
-				case 2:
-					System.out.println("태어난 날 : 월요일");
-					break;
-				case 3:
-					System.out.println("태어난 날 : 화요일");
-					break;
-				case 4:
-					System.out.println("태어난 날 : 수요일");
-					break;
-				case 5:
-					System.out.println("태어난 날 : 목요일");
-					break;
-				case 6:
-					System.out.println("태어난 날 : 금요일");
-					break;
-				case 7:
-					System.out.println("태어난 날 : 토요일");
-					break;
-				}
-
-				Calendar today = Calendar.getInstance();
-				long day = (today.getTimeInMillis() - date.getTimeInMillis()) / 1000 / 60 / 60 / 24;
-
-				System.out.println("태어난 지 " + day + "일이 지남");
+			try {
+				result = sdf.parse(data); // 지정된 형태를 입력한 경우 break;
 				break;
-			}
+			} catch (ParseException e) {
 
-		} catch (Exception e) {
-			practice();
+			}
 
 		}
 
+		Calendar inputDate = Calendar.getInstance();
+		Calendar today = Calendar.getInstance();
+
+		inputDate.setTime(result);
+
+		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy/MM/dd은 E요일입니다.");
+		System.out.println(sdf2.format(result));
+
+		long day = (today.getTimeInMillis() - inputDate.getTimeInMillis()) / (1000 * 60 * 60 * 24);
+		System.out.println("태어난 날부터 지금까지 " + day + "일 지났습니다.");
+
 	}
+
+	//	String[] arr = bd.split("/");
+	//
+	//	int y = Integer.parseInt(arr[0]);
+	//	int m = Integer.parseInt(arr[1]);
+	//	int d = Integer.parseInt(arr[2]);
+	//
+	//	Calendar date = Calendar.getInstance();
+	//	date.set(y, m - 1, d);
+//
+	//	switch (date.get(Calendar.DAY_OF_WEEK)) {
+	//	case 1:
+	//		System.out.println("태어난 날 : 일요일");
+	//		break;
+	//	case 2:
+	//		System.out.println("태어난 날 : 월요일");
+	//		break;
+//	case 3:
+//		System.out.println("태어난 날 : 화요일");
+//		break;
+//	case 4:
+//		System.out.println("태어난 날 : 수요일");
+//		break;
+//	case 5:
+//		System.out.println("태어난 날 : 목요일");
+//		break;
+//	case 6:
+//		System.out.println("태어난 날 : 금요일");
+//		break;
+//	case 7:
+//		System.out.println("태어난 날 : 토요일");
+//		break;
+//	}
+//
+//	Calendar today = Calendar.getInstance(); 																		
+//	long day = (today.getTimeInMillis() - date.getTimeInMillis()) / 1000 / 60 / 60 / 24;
+//
+//	System.out.println("태어난 지 " + day + "일이 지남");
+//	break;
+
 }
