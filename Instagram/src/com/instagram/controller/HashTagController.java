@@ -14,8 +14,12 @@ public class HashTagController {
 	public void createHashtag(HashTag newHashtag) {
 	    hashtags.add(newHashtag);
 	}
+	
+	public HashTag viewHashtag(int index) {
+		return hashtags.get(index);
+	}
     
-    // 해시태그 삭제ㄴ
+    // 해시태그 삭제
     public void deleteHashtag(int index) {
        hashtags.remove(index);
     }
@@ -26,7 +30,7 @@ public class HashTagController {
     }
     
     // 인기 해시태그 조회
-    public static List<HashTag> getPopularHashtags(List<HashTag> hashtags) {
+    public static List<HashTag> popularHashtags(List<HashTag> hashtags) {
         return hashtags;
     }
 

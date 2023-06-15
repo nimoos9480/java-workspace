@@ -12,7 +12,7 @@ public class CommentController {
 	List<Comment> comments = new ArrayList<>();
 	UserController uc = new UserController();
 	
-	// C : 댓글 작성  -->  로그인된 회원만 가능!
+	// C : 댓글 작성 
 	public void addComment(String id, String password, Comment comment) {
 		
 		if(uc.login(id, password)) {
@@ -22,40 +22,29 @@ public class CommentController {
 	
 	// R : 댓글 1개 보기 
 	
-	public Comment viewComment(int index) {  // 반환타입 Comment로 변경해줌
-		return comments.get(index);  // 인덱스를 받아옴
+	public Comment viewComment(int index) {  
+		return comments.get(index);  
 	}
 	
 	
-	// U : 댓글 수정  -->  로그인한 회원과 이 댓글을 작성한 작성자가 일치해야 가능
+	// U : 댓글 수정  
 	public void updateComment(int index, Comment comment) {
 		comments.set(index, comment);
 	}
 	
 	
-	// D : 댓글 삭제  -->  로그인한 회원과 이 댓글을 작성한 작성자가 일치해야 가능
+	// D : 댓글 삭제  
 	public void deleteComment(int index) {
 		comments.remove(index);
 	}
 	
-	   // 코멘트 좋아요 기능
+	   // 좋아요 기능
     public void likeComment(int Index) {
         Comment comment = comments.get(Index);
         comments.add(comment);
     }
 
-    // 코멘트 신고 기능
-    public void reportComment(int Index) {
-        Comment comment = comments.get(Index);
-        comments.set(Index, comment);
-    }
-
-    // 코멘트 답글 작성 기능
-    public void addReplyToComment(int Index, Comment reply) {
-        Comment comment = comments.get(Index);
-        comments.add(comment);
-    }
-
+  
  
 
 }

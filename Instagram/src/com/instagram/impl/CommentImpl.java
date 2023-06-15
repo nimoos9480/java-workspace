@@ -11,10 +11,10 @@ public interface CommentImpl {
 	// R : 댓글 1개 보기 
 	public Comment viewComment(int index);
 	
-	// U : 댓글 수정  -->  로그인한 회원과 이 댓글을 작성한 작성자가 일치해야 가능
+	// U : 댓글 수정
 	public void updateComment(int index, Comment comment);
 	
-	// D : 댓글 삭제  -->  로그인한 회원과 이 댓글을 작성한 작성자가 일치해야 가능
+	// D : 댓글 삭제
 	public void deleteComment(int index);
 
 
