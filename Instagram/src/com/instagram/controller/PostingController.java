@@ -1,35 +1,38 @@
 package com.instagram.controller;
 
+import java.util.ArrayList;
+
 import com.instagram.model.Posting;
 
 public class PostingController  {
-
-	Posting[] postingList = new Posting[5];
-	int index = 0;
-
 	
+	
+
+	ArrayList<Posting> postingList = new ArrayList<>();
+	
+
 	public void upload(Posting posting) {
-		postingList[index++] = posting;
+		postingList.add(posting);
 	}
 
 	
-	public Posting[] postingList() {
+	public ArrayList<Posting> postingList() {
 		return postingList;
 	}
 
 	
 	public Posting viewPosting(int index) {
-		return postingList[index];
+		return postingList.get(index);
 	}
 
 	
 	public void updatePosting(int index, Posting posting) {
-		postingList[index] = posting;
+		postingList.set(index, posting);
 	}
 
 	
-	public boolean deletePosting() {
-		return false;
+	public boolean deletePosting(Posting posting) {
+		return postingList.remove(posting);
 	}
 	
 	/*
