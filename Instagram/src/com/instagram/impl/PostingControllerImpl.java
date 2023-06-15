@@ -1,6 +1,9 @@
 package com.instagram.impl;
 
+import java.util.ArrayList;
+
 import com.instagram.model.Posting;
+import com.instagram.model.User;
 
 public interface PostingControllerImpl {
 	
@@ -19,5 +22,6 @@ public interface PostingControllerImpl {
 	public void likePosting(int index);
 	
 	public void sharePosting(int index);
+	
 
 }

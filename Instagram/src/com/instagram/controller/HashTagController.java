@@ -6,10 +6,12 @@ import java.util.List;
 import com.instagram.model.HashTag;
 import com.instagram.model.Posting;
 
-public class HashTagController {
+public class HashTagController {	
 	
 	List<HashTag> hashtags = new ArrayList<>();
+	PostingController postingController; 
 
+	 
 	// 해시태그 생성
 	public void createHashtag(HashTag newHashtag) {
 	    hashtags.add(newHashtag);
@@ -29,10 +31,15 @@ public class HashTagController {
     	hashtags.set(index, hashtag);
     }
     
-    // 인기 해시태그 조회
-    public static List<HashTag> popularHashtags(List<HashTag> hashtags) {
-        return hashtags;
-    }
-
     
+    // 해시태그 검색
+    public Posting searchByHashtag(String hashtag) {
+        for (Posting posting : postingController.postingList()) {
+            if (posting.getHashtags().equals(hashtag)) {
+                return posting;
+            }
+        }
+        return null;
     }
+    
+}

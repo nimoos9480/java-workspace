@@ -50,7 +50,7 @@ public class PostingController  {
 	public void sharePosting(int index) { // 공유하기
 		Posting posting = postingList.get(index);
 		int shares = posting.getShares();
-		posting.setShares(shares);
+		posting.setShares(shares + 1);
 	}
 
 }

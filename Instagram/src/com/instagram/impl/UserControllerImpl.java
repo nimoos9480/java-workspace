@@ -4,11 +4,22 @@ import com.instagram.model.User;
 
 public interface UserControllerImpl {
 	
-	public boolean login(); // 로그인
-	public boolean signUp();  // 회원가입
-	public User viewProfile(); // 프로필 보기
-	public User updateProfile(); // 프로필 수정
-	public boolean deleteProfile(); // 계정 삭제
+	public boolean login(String id, String password);
+	
+	public void signUp(User user);
+
+	public User viewProfile();
+	
+	public User updateProfile(User user);
+	
+	public void deleteProfile(String id);
+	
+	public void updateProfileImageUrl(int id, String imageUrl);
+	
+	public void increasefollowersCount(int id);
+	
+	public void increasefollowingsCount(int id);
+
 
 
 }

@@ -42,7 +42,26 @@ public class UserController {
 		}
 	}
 	
-	//기능뽑기 : CRUD(Create Read Update Delete)
+	
+	public void updateProfileImageUrl(int id, String imageUrl) {
+		 if (user != null) {
+			 user.setProfileImageUrl(imageUrl);
+		 }
+	            
+	}
+	
+	public void increasefollowersCount(int id) {
+		if(user != null) {
+            user.setFollowersCount(user.getFollowersCount() + 1);
+        }
+	}
+	
+	public void increasefollowingsCount(int id) {
+		if (user != null) {
+            user.setFollowingCount(user.getFollowingCount()+ 1);
+
+        }
+	}
 
 
 }
