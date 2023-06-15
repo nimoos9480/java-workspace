@@ -39,21 +39,21 @@ public class CommentController {
 	}
 	
 	   // 코멘트 좋아요 기능
-    public void likeComment(int commentIndex, User user) {
-        Comment comment = comments.get(commentIndex);
-        comments.addLike(user);
+    public void likeComment(int Index) {
+        Comment comment = comments.get(Index);
+        comments.add(comment);
     }
 
     // 코멘트 신고 기능
-    public void reportComment(int commentIndex) {
-        Comment comment = comments.get(commentIndex);
-        comments.setReported(true);
+    public void reportComment(int Index) {
+        Comment comment = comments.get(Index);
+        comments.set(Index, comment);
     }
 
     // 코멘트 답글 작성 기능
-    public void addReplyToComment(int commentIndex, Comment reply) {
-        Comment comment = comments.get(commentIndex);
-        comments.addReply(reply);
+    public void addReplyToComment(int Index, Comment reply) {
+        Comment comment = comments.get(Index);
+        comments.add(comment);
     }
 
  
