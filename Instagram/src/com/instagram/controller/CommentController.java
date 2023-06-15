@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.instagram.model.Comment;
+import com.instagram.model.User;
 
 // 개인 과제는 이런 방식으로
 public class CommentController {
@@ -37,5 +38,24 @@ public class CommentController {
 		comments.remove(index);
 	}
 	
+	   // 코멘트 좋아요 기능
+    public void likeComment(int commentIndex, User user) {
+        Comment comment = comments.get(commentIndex);
+        comments.addLike(user);
+    }
+
+    // 코멘트 신고 기능
+    public void reportComment(int commentIndex) {
+        Comment comment = comments.get(commentIndex);
+        comments.setReported(true);
+    }
+
+    // 코멘트 답글 작성 기능
+    public void addReplyToComment(int commentIndex, Comment reply) {
+        Comment comment = comments.get(commentIndex);
+        comments.addReply(reply);
+    }
+
+ 
 
 }
