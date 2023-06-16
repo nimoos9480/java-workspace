@@ -81,7 +81,7 @@ public class A_ArrayList {
 		System.out.println(list.remove(0) + " 삭제");
 //		System.out.println(list);
 		
-		// 6. get(int index) :  해당 인덱스로 객체 가져오기 ( = 게터)
+		// 6. get(int index) :  해당 인덱스 객체 가져오기 ( = 게터)
 		System.out.println(list.get(0));
 		
 		// 7. subList(int index1, int index2) : 추출해서 새로운 List로 반환
