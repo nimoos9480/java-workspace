@@ -17,8 +17,8 @@ public class D_String {
 	public static void main(String[] args) {
 		
 		char[] arr = "Hello, World!".toCharArray();
-		
-		for(char c : arr)
+	
+		for(char c : arr)  //  arr 배열의 각 요소를 반복적으로 처리, c는 배열의 각 요소를 나타내는 변수
 			System.out.println(c);
 	}
 	

@@ -18,7 +18,7 @@ public class C_Sorting {
 		int[] copy = new int[10]; // 깊은 복사
 		
 		for(int i = 0; i<arr.length; i++) {
-			copy[(arr.length -1) - i] = arr[i];
+			copy[(arr.length -1) - i] = arr[i];			// 배열 arr의 요소들을 역순으로 copy 배열에 복사.  i는 0부터 arr.length - 1까지 증가
 			} System.out.println(Arrays.toString(copy));
 	
 	}

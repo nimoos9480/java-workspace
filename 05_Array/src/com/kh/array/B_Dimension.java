@@ -79,11 +79,17 @@ public class B_Dimension {
 	public void method2() {
 	
 		int[][] arr = new int[3][5]; // {}3덩어리 안에 내용물이 5개씩이 들어있다는 의미
-		int value = 1;
+		int value = 1;   //  2차원 배열 arr의 각 요소에 1부터 시작하여 순차적인 값이 할당되는 것이 목적이라 1로 초기화
 		
 		for(int i = 0; i < arr.length; i++) {
 			for(int j = 0; j < arr[i].length; j++) {
 				arr[i][j] = value++;
+				
+				/*
+				  1  2  3  4  5
+				  6  7  8  9  10
+				  11 12 13 14 15
+				  */
 				
 			}
 		}
@@ -106,6 +112,12 @@ public class B_Dimension {
 		for(int[] i : arr) {
 			for(int j : i) {
 				System.out.println(j);
+				
+				/*
+				 * {1, 2}
+					{3, 4, 5}
+					{6, 7, 8, 9, 10}
+				 * */
 			}
 		}
 		
@@ -129,9 +141,7 @@ public class B_Dimension {
 		}
 	}
 	
-	
-	
-	
+
 	
 	public static void main(String[] args) {
 		
