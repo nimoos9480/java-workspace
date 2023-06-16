@@ -99,8 +99,16 @@ public class A_Array {
 		
 		for(int i = 0; i<score.length; i++) {
 			score[i] = num;
-			num-=10;
+			num-=10;   // score 배열은 100부터 시작하여 10씩 감소하는 순서로 값을 가짐 
 		}
+		
+		/* 반복문 결과
+		 	score[0] = 100
+			score[1] = 90
+			score[2] = 80
+			score[3] = 70
+			score[4] = 60
+		 * */
 		
 	
 		
@@ -111,8 +119,17 @@ public class A_Array {
 		 * 
 		 */
 	
-	for(int s : score) {
-		System.out.println(s);
+	for(int s : score) {  //  배열 score의 각 요소를 반복하고, 각 요소를 s 변수에 할당
+		System.out.println(s);  // 배열 score의 각 요소를 한 줄에 하나씩 출력하는 것
+		
+		/*
+		 * 출력 결과
+		 * 100
+		 * 90
+		 * 80
+		 * 70
+		 * 60
+		 * */
 	}
 		
 	}
@@ -154,37 +171,43 @@ public class A_Array {
 		System.out.println(number); // [I@7f63425a
 		System.out.println(copy); // 결과값이 동일하게 나옴
 		
-		System.out.println(Arrays.toString(number));
-		System.out.println(Arrays.toString(copy)); // [1, 2, 3, 4, 5]
+		
+		// Arrays.toString 배열의 요소를 문자열로 변환하여 반환
+		System.out.println(Arrays.toString(number));	   						  
+		System.out.println(Arrays.toString(copy));			 // [1, 2, 3, 4, 5]     		
 		
 		copy[1] = 20;
 		System.out.println(Arrays.toString(number));
 		System.out.println(Arrays.toString(copy)); // [1, 20, 3, 4, 5]
 		
-		System.out.println(Arrays.toString(number) == Arrays.toString(copy)); //false
+		System.out.println(Arrays.toString(number) == Arrays.toString(copy)); 		 //false
 		
-		System.out.println(number.hashCode()); // 2137211482 : 객체를 식별할 하나의 정수
-		System.out.println(copy.hashCode()); // 2137211482
-		System.out.println(number.hashCode() == copy.hashCode()); // true
+		
+		// ** hashCode() : 해당 객체의 고유한 정수값으로, 객체가 메모리 내에서 유일하게 식별될 수 있는 값( 객체의 .equals() 메서드와 함께 사용되어 객체의 동등성 비교에 활용됨) 
+		System.out.println(number.hashCode()); 			// 2137211482 : 객체를 식별할 하나의 정수
+		System.out.println(copy.hashCode()); 					// 2137211482
+		System.out.println(number.hashCode() == copy.hashCode());			 // true
+																																	
 		}
 		
+	
 	// 2. 깊은 복사 : 동일한 새로운 배열을 하나 생성해서 내부의 값들도 함께 복사
 	// 1) for문을 이용한 깊은 복사
 	public void method6(){
 		
 		int[] number = {1, 2, 3, 4, 5};
-		int[] copy = new int[5];
+		int[] copy = new int[5]; 						// 동일한 요소들을 가지는 copy라는 새로운 정수 배열을 생성
 		
 		for(int i = 0; i<number.length; i++) {
-			copy[i] = number[i]; 
+			copy[i] = number[i]; 						// number 배열의 각 요소를 copy 배열에 복사(number 배열의 i번째 요소를 copy 배열의 동일한 인덱스 위치에 복사)
 		}
 		
 		copy[1] = 20;
-		System.out.println(Arrays.toString(number));
-		System.out.println(Arrays.toString(copy));
+		System.out.println(Arrays.toString(number));			// [1, 2, 3, 4, 5]
+		System.out.println(Arrays.toString(copy));				// [1, 20, 3, 4, 5]
 		
-		System.out.println(number.hashCode());
-		System.out.println(copy.hashCode());
+		System.out.println(number.hashCode());					// 2137211482
+		System.out.println(copy.hashCode());						// 920011586
 
 	}
 	
@@ -197,15 +220,15 @@ public class A_Array {
 	
 	public void method7(){
 		
-		int[] number = {1, 2, 3, 4, 5};
-		int[] copy = new int[5];
+		int[] number = {1, 2, 3, 4, 5};				// 요소로 [1, 2, 3, 4, 5]를 가지도록 초기화
+		int[] copy = new int[5];						// [0, 0, 0, 0, 0]와 같이 모든 요소가 0으로 초기화
 		
 		System.arraycopy(number, 0, copy, 0, number.length);
 		
 		copy[2] = 30;
 		
 		System.out.println(Arrays.toString(number));
-		System.out.println(Arrays.toString(copy));
+		System.out.println(Arrays.toString(copy));			// [1, 2, 30, 4, 5]
 	}
 	
 	/*
@@ -219,10 +242,8 @@ public class A_Array {
 	
 	public void method8(){
 		int[] number = {1, 2, 3, 4, 5};
-		int[] copy = null;
-		
-//		System.out.println(copy.length); //  NullPointerException 에러 뜸
-		
+		int[] copy = null;					// null로 초기화되었기 때문에 배열에는 아무런 요소도 없는 상태
+													//	System.out.println(copy.length); //  NullPointerException 에러 뜸  ==> 배열에 유효한 값을 할당하기
 		copy = Arrays.copyOf(number, number.length);
 		
 		copy[3] = 10;
@@ -257,7 +278,7 @@ public class A_Array {
 //		a.method4();
 //		a.method5();
 //		a.method6();
-//		a.method7();
+		a.method7();
 //		a.method8();
 //		a.method9();
 

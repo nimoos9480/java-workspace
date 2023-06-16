@@ -16,11 +16,11 @@ public class ChattClient {
 		
 		try {
 			
-//			InetAddress ip = InetAddress.getLocalHost();  // 본인의 IP 주소 찾는 방법
+			InetAddress ip = InetAddress.getLocalHost();  // 본인의 IP 주소 찾는 방법
 			
 			// 1. 소켓 생성
-			Socket s = new Socket("192.168.10.34", 60000);   
-//			Socket s = new Socket(ip.getHostAddress(), 60000);
+//			Socket s = new Socket("192.168.10.34", 60000);   
+			Socket s = new Socket(ip.getHostAddress(), 60000);
 			
 			
 			// 2. 스트림			
