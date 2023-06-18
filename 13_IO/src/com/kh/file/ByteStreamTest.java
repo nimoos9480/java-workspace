@@ -23,7 +23,7 @@ import java.io.IOException;
 
 public class ByteStreamTest {
 
-	// 바이너리 데이터(이미지 파일)을 읽어서 파일로 출력하는 로직  // 다운로드 로직
+	// 바이너리 데이터(이미지 파일)을 읽어서 파일로 출력하는 로직(파일을 복사)  // 다운로드 로직
 	public static void main(String[] args) {
 		
 		String fileName = "src/bird.jpg";
@@ -45,8 +45,8 @@ public class ByteStreamTest {
 					
 					// 3. 데이터를 읽어서 출력
 					int data = 0;
-					while((data = dis.read()) != -1) {
-						dos.write(data);
+					while((data = dis.read()) != -1) {  // DataInputStream에서 데이터를 읽어와서 data가 -1이 아닐때까지 반복
+						dos.write(data);		// data 변수에 저장된 값을 DataOutputStream에 쓴다 
 						
 					}
 ;		} catch(EOFException e) {  // 입력 도중 예상외의 파일이 종료되었을 때 해당하는 예외

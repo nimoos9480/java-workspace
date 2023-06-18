@@ -27,13 +27,17 @@ public class Book {
 	}
 	
 	
-	// setter / getter -> 값을 가지고 오고 빼고 할 때 사용...?
+// setter / getter 
+	// 객체 내부의 데이터에 접근하고 조작하는 것을 캡슐화하여 객체의 무결성과 보안을 보장하며,
+	// 외부에서 객체의 상태를 변경하거나 가져올 때에도 특정 규칙을 적용할 수 있어 객체의 일관성을 유지
 	public String getTitle() {
 		return title;
+		// get 메서드는 보통 해당 변수의 값을 반환하는 역할, 클래스 외부에서 객체의 내부 상태에 접근할 때 사용
 	}
 	
 	public void setTitle(String title) { // 매개변수(String title)를 받아 title 변수에 넣는 것
 		this.title = title;
+		// set 메서드는 일반적으로 매개변수를 받아서 해당 변수에 값을 할당하는 기능을 수행
 	}
 	
 	public int getPrice() {
@@ -72,7 +76,7 @@ public class Book {
 	 * 
 	 * 생성자임에도 private으로 쓰는 경우가 있다
 	 * 
-	 * [싱글톤] : 여기저기서 공유하는 객체를 쓸 때...?
+	 * [싱글톤] : 특정 클래스의 인스턴스가 오직 하나만 생성되는 것을 보장(전역적으로 접근 가능 : 여러 개의 객체가 동일한 자원에 접근해야 하는 경우 사용) 
 	 * 
 	 * private static Book singleton = new Book();
 	 * private Book() {}

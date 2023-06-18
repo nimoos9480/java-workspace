@@ -54,7 +54,8 @@ public class A_ArrayList {
 		 * */
 		
 		
-		ArrayList<Person> list = new ArrayList<>();   // Person 객체만 담아라 라는 뜻
+		ArrayList<Person> list = new ArrayList<>();   
+		// ArrayList 클래스를 사용하여 Person 타입의 요소를 저장하는 리스트를 생성(Person 객체만 담아라 라는 뜻)
 		
 		// 1. add(E e) : 리스트 끝에 추가
 		list.add(new Person("전현무", "삼성동", 45));

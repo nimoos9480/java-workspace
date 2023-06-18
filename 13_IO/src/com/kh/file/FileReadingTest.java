@@ -38,7 +38,7 @@ public class FileReadingTest {
 			fw.write("아닌가요?ㅠㅠ\n");
 			fw.write("그래도 계속 해주세요!\n");
 			
-			fw.flush(); // 작성 후 반드시 추가해줘야 저장됨   // 강제로 자료를 출력하는 역할(끝내주는 기능)
+			fw.flush(); // 내보내기 => 작성 후 반드시 추가해줘야 저장됨   // 강제로 자료를 출력하는 역할(끝내주는 기능)
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -51,7 +51,7 @@ public class FileReadingTest {
 		try(FileReader fr = new FileReader(fileName)) {
 			
 			int data = 0;
-			while((data = fr.read()) != -1) {
+			while((data = fr.read()) != -1) {  // '!= -1' 조건은 파일의 끝이 아닌 경우를 의미(파일에서 데이터를 성공적으로 읽어온 경우)
 				System.out.print((char) data);    // 한 글자씩 가지고 오는 한계 존재
 			}
 		} catch (IOException e) {
@@ -80,7 +80,7 @@ public class FileReadingTest {
 	public void method2() {
 		/*
 		 * BufferedReader, BufferedWriter : 입출력 효율을 높이기 위해 버퍼를 사용하는 보조스트림
-		 * - 라인(line) 단위로 입출력이 편리해 짐
+		 * - 라인(line) 단위로 입출력이 편리해 짐 
 		 * - String readLine() : 한 라인만 읽어온다. (BufferedReader 메서드에 존재)
 		 * - void newLine() : 라인 구분자(개행문자)를 출력한다. (BufferedWriter 메서드)
 		 * */

@@ -49,9 +49,9 @@ public class A_HashMap {
 		System.out.println(col);
 		
 		// 3. 키에 해당하는 values 값 가져오기 // 실제로는 이걸 많이 쓴다
-		Iterator<String> it = key.iterator();
-		while(it.hasNext()) {
-			String name = it.next();  
+		Iterator<String> it = key.iterator();  // Iterator는 자바의 인터페이스로, 컬렉션을 순회하면서 요소에 접근하는 기능을 제공
+		while(it.hasNext()) {  // 다음에 접근할 요소가 있는지 여부를 확인
+			String name = it.next();  // 다음에 접근할 요소가 있는지 여부를 확인
 			System.out.println(name + " : " + map.get(name)); // map.get(name)으로 가지고 온 키에 해당하는 값(value)을 가져오는 것
 			
 		}

@@ -35,13 +35,13 @@ public class SerializationTest {
 				// 1. 스트림 생성
 				// FileOutputStream : 파일 출력에 사용되는 기본 바이트 스트림 클래스
 				// ObjectOutputStream : 객체 단위로 출력 시에 사용되는 보조 바이트 스트림 클래스
-				oos = new ObjectOutputStream(new FileOutputStream(fileName));    		// 보조스트림 안에(기반스트림 안에(파일명))
+				oos = new ObjectOutputStream(new FileOutputStream(fileName));    // 보조스트림 안에(기반스트림 안에(파일명))
 				
 				// 2. 객체 생성
 				Person p = new Person("제니", 27, "jennierubyjane");
 				
 				// 3. 날린다.
-				oos.writeObject(p);
+				oos.writeObject(p); //  p 객체를 직렬화하여 ObjectOutputStream을 통해 스트림으로 출력하는 코드
 				
 				System.out.println("person.obj 파일에 정보 저장");  		 
 				
@@ -67,7 +67,7 @@ public class SerializationTest {
 		public void fileRead() {
 			
 			// FileInputStream : 파일로부터 데이터를 읽어들이기 위해 사용하는 기본 바이트 스트림 클래스
-			//ObjectInputStream : 스트림으로부터 객체 단위로 읽기위해 사용되는 보조 바이트 스트림 클래스
+			// ObjectInputStream : 스트림으로부터 객체 단위로 읽기위해 사용되는 보조 바이트 스트림 클래스
 			
 			try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("src/person.obj"))) {
 				Person p = (Person) ois.readObject();
@@ -85,7 +85,7 @@ public class SerializationTest {
 		
 		// 여러 객체를 저장
 		public void objectsSave() {
-			
+									// 주어진 배열을 리스트로 변환하는 역할
 			List<Person> list = Arrays.asList(
 					new Person("제니", 27, "jennierubyjane"),
 					new Person("지수", 28, "sooyaa__"),
